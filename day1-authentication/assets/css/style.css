@@ -1,0 +1,309 @@
+* {
+  outline: none;
+}
+body {
+  background: #fff;
+  padding: 5%;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  font-weight: bolder;
+}
+@media only screen and (min-width: 1000px) and (max-width: 1364px) {
+  body {
+    padding: 5% 2%;
+  }
+}
+@media only screen and (min-width: 700px) and (max-width: 999px) {
+  body {
+    padding: 5% 1%;
+  }
+}
+@media only screen and (max-width: 699px) {
+  body {
+    padding: 0;
+  }
+}
+button,
+.button {
+  padding: 1em 2em;
+  display: inline-block;
+  border-radius: 5px;
+  border: 0;
+  font-size: 1.25rem;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  user-drag: none;
+  color: rgba(0, 0, 0, 0.6);
+  background: #ffffff;
+  box-shadow: 0 2px 50px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.25s ease;
+}
+button.inverse,
+.button.inverse {
+  background: #8eccc8;
+  color: #ffffff;
+  font-weight: 100;
+  box-shadow: 0 2px 50px 5px rgba(0, 0, 0, 0.05);
+}
+button:hover,
+.button:hover {
+  margin-top: 0.1em;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+.login-ctn {
+  display: grid;
+  width: 90%;
+  height: 80vh;
+  margin: 0 auto;
+  overflow-y: hidden;
+  border-radius: 0.5em;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.1);
+}
+@media only screen and (min-width: 1000px) and (max-width: 1364px) {
+  .login-ctn {
+    width: 95%;
+    height: 85vh;
+  }
+}
+@media only screen and (min-width: 700px) and (max-width: 999px) {
+  .login-ctn {
+    width: 100%;
+    height: 90vh;
+  }
+}
+@media only screen and (max-width: 699px) {
+  .login-ctn {
+    width: 100%;
+    min-height: 100vh;
+    border: none;
+    grid-template-columns: none;
+    grid-template-rows: 1fr 1fr;
+    overflow-y: scroll;
+  }
+}
+.login-ctn .left {
+  background: #8eccc8;
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  display: grid;
+  grid-template-rows: 0.2fr 1fr;
+  cursor: default;
+  user-select: none;
+  position: relative;
+}
+@media only screen and (max-width: 699px) {
+  .login-ctn .left {
+    height: 100vh;
+  }
+}
+.login-ctn .left > .footer {
+  grid-row: 4;
+  height: 100px;
+  width: 100%;
+  display: block;
+  bottom: 0;
+  position: absolute;
+  z-index: 1;
+}
+.login-ctn .left > .footer img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: invert(100%);
+}
+.login-ctn .left .gradient {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 2;
+  background: linear-gradient(to bottom, #8eccc8, transparent);
+}
+.login-ctn .left > .top {
+  display: grid;
+  justify-items: center;
+  grid-template-rows: 1fr 1fr;
+  padding: 4em 2em 0 2em;
+  text-align: center;
+}
+@media only screen and (max-width: 699px) {
+  .login-ctn .left > .top {
+    grid-template-rows: 0.5fr 1fr;
+    padding: 2em 0 0 0;
+  }
+}
+.login-ctn .left > .top img {
+  height: 100px;
+  width: 100px;
+  filter: invert(100%);
+  opacity: .9;
+}
+.login-ctn .left > .top h1 {
+  line-height: 1;
+  margin-top: 0.9em;
+  font-size: 1.5rem;
+  text-transform: lowercase;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 5px;
+}
+.login-ctn .left > .body {
+  padding: 0 5em;
+  overflow: hidden;
+  z-index: 5;
+  text-align: center;
+}
+@media only screen and (min-width: 700px) and (max-width: 999px) {
+  .login-ctn .left > .body {
+    padding: 0 2em;
+  }
+}
+@media only screen and (max-width: 699px) {
+  .login-ctn .left > .body {
+    padding: 0 2em;
+  }
+}
+.login-ctn .left > .body p {
+  font-weight: 100;
+  font-size: 1.25rem;
+  color: #ffffff;
+  line-height: 1.7em;
+  margin: 0;
+  margin-bottom: 2em;
+}
+@media only screen and (max-width: 699px) {
+  .login-ctn .left > .body p {
+    margin-bottom: 1em;
+    font-size: 1.3rem;
+  }
+}
+.login-ctn .right {
+  padding: 4em;
+  display: grid;
+  grid-template-rows: 0.2fr 1fr;
+  position: relative;
+}
+@media only screen and (min-width: 1000px) and (max-width: 1364px) {
+  .login-ctn .right {
+    padding: 2em;
+  }
+}
+@media only screen and (min-width: 700px) and (max-width: 999px) {
+  .login-ctn .right {
+    padding: 2em;
+  }
+}
+@media only screen and (max-width: 699px) {
+  .login-ctn .right {
+    padding: 1em;
+  }
+}
+.login-ctn .right > .top {
+  margin-bottom: 4em;
+  margin-top: 4em;
+}
+@media only screen and (min-width: 700px) and (max-width: 999px) {
+  .login-ctn .right > .top {
+    margin-top: 2em;
+  }
+}
+.login-ctn .right > .top h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.7);
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 0;
+  line-height: 2;
+  font-weight: 700;
+}
+@media only screen and (min-width: 1000px) and (max-width: 1364px) {
+  .login-ctn .right > .top h1 {
+    line-height: 1.25;
+  }
+}
+@media only screen and (min-width: 700px) and (max-width: 999px) {
+  .login-ctn .right > .top h1 {
+    line-height: 1.25;
+  }
+}
+@media only screen and (max-width: 699px) {
+  .login-ctn .right > .top h1 {
+    line-height: 1.25;
+  }
+}
+.login-ctn .right > .top p {
+  margin: 0 5em;
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.5);
+}
+@media only screen and (min-width: 1000px) and (max-width: 1364px) {
+  .login-ctn .right > .top p {
+    margin: 0 2em;
+  }
+}
+@media only screen and (min-width: 700px) and (max-width: 999px) {
+  .login-ctn .right > .top p {
+    margin: 1em 0 0 0;
+  }
+}
+@media only screen and (max-width: 699px) {
+  .login-ctn .right > .top p {
+    margin: 1em 0 0 0;
+  }
+}
+.login-ctn .right form {
+  margin: 0 4em;
+}
+@media only screen and (min-width: 700px) and (max-width: 999px) {
+  .login-ctn .right form {
+    margin: 0 0;
+  }
+}
+@media only screen and (max-width: 699px) {
+  .login-ctn .right form {
+    margin: 0;
+  }
+}
+.login-ctn .right form input[type=text],
+.login-ctn .right form input[type=email],
+.login-ctn .right form input[type=password] {
+  height: 50px;
+  width: 100%;
+  background: #fff;
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  display: block;
+  margin-bottom: 1em;
+  outline: none;
+  font-size: 1.2rem;
+  font-weight: 100;
+  color: rgba(0, 0, 0, 0.6);
+}
+.login-ctn .right form input[type=text]:focus,
+.login-ctn .right form input[type=email]:focus,
+.login-ctn .right form input[type=password]:focus {
+  border-bottom: 2px solid #8eccc8;
+  color: #8eccc8;
+}
+.login-ctn .right form input[type=text]::placeholder,
+.login-ctn .right form input[type=email]::placeholder,
+.login-ctn .right form input[type=password]::placeholder {
+  opacity: .6;
+}
+.login-ctn .right form input[type=submit],
+.login-ctn .right form input[type=button],
+.login-ctn .right form button {
+  margin: 3em auto 0 auto;
+  display: block;
+}
