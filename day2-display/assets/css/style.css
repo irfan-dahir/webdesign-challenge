@@ -1,0 +1,337 @@
+* {
+  outline: none;
+  font-family: 'Open Sans', sans-serif;
+}
+body {
+  display: grid;
+  grid-gap: 1em;
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
+  background: #94B4DD;
+  font-family: 'Open Sans', sans-serif;
+}
+@media only screen and (max-width: 699px) {
+  body {
+    padding: 2em 0;
+  }
+}
+a {
+  color: #6891F0;
+}
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  z-index: 999;
+  width: 100%;
+}
+.tooltip .tooltip-text {
+  visibility: visible;
+  opacity: 0;
+  width: 60px;
+  background: rgba(0, 0, 0, 0.7);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 0.5em 0;
+  border-radius: 4px;
+  margin-left: -3.5em;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  transition: all 0.25s ease 0.25s;
+}
+.tooltip .tooltip-text.inverse {
+  background: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.8);
+}
+@media only screen and (min-width: 700px) and (max-width: 1060px) {
+  .tooltip .tooltip-text {
+    right: 0;
+    margin-left: 3.5em;
+    visibility: visible;
+  }
+}
+@media only screen and (max-width: 699px) {
+  .tooltip .tooltip-text {
+    right: 0;
+    margin-left: 3.5em;
+    visibility: visible;
+  }
+}
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+  margin-left: -5em;
+}
+@media only screen and (min-width: 700px) and (max-width: 1060px) {
+  .tooltip:hover .tooltip-text {
+    margin-left: 5em;
+  }
+}
+@media only screen and (max-width: 699px) {
+  .tooltip:hover .tooltip-text {
+    margin-left: 5em;
+  }
+}
+.button {
+  background: #6891F0;
+  color: #fff;
+  min-height: 50px;
+  min-width: 100px;
+  padding: 0.5em 2em;
+  border-radius: 35px;
+  font-weight: normal;
+  font-family: 'Open Sans', sans-serif;
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.5s ease, background 0.3s ease 0.1s;
+  user-select: none;
+}
+.button:hover {
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+  background: #96b3f5;
+}
+.modal {
+  background: #fff;
+  width: 70vw;
+  height: 70vh;
+  position: relative;
+  border-radius: 35px;
+  box-shadow: 0 0 100px 50px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: [col1] 55% [col2] 45%;
+}
+@media only screen and (min-width: 1060x) and (max-width: 1200px) {
+  .modal {
+    width: 90vw;
+  }
+}
+@media only screen and (min-width: 700px) and (max-width: 1060px) {
+  .modal {
+    width: 90vw;
+  }
+}
+@media only screen and (max-width: 699px) {
+  .modal {
+    grid-template-columns: none;
+    grid-template-rows: 80vh 90vh;
+    min-height: 90vh;
+    height: auto;
+    width: 90vw;
+  }
+}
+.modal .action-ctn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 2em 0 0 -1.5em;
+}
+@media only screen and (min-width: 700px) and (max-width: 1060px) {
+  .modal .action-ctn {
+    margin: 2em 0 0 -0.5em;
+  }
+}
+@media only screen and (max-width: 699px) {
+  .modal .action-ctn {
+    margin: 2em 0 0 -0.5em;
+  }
+}
+.modal .action-ctn button {
+  display: block;
+  background: #6891F0;
+  color: #ffffff;
+  height: 60px;
+  width: 60px;
+  margin-bottom: 0.8em;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.5s ease, background 0.3s ease 0.1s;
+}
+.modal .action-ctn button:hover {
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+  background: #96b3f5;
+}
+.modal .view {
+  display: grid;
+  grid-template-rows: [row1] 15% [row2] 65% [row3] 20%;
+  border-top-left-radius: 35px;
+  border-bottom-left-radius: 35px;
+  overflow: hidden;
+}
+.modal .view .action {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1em;
+}
+.modal .view .action button {
+  display: inline-block;
+  font-size: 1.8rem;
+  padding: 0.25em;
+  margin-right: 0.3em;
+  opacity: .9;
+  color: #6891F0;
+}
+.modal .view .action button:last-child {
+  margin-right: 0;
+}
+.modal .view .action button.heart {
+  color: #F0505B;
+}
+.modal .view .image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+.modal .view .image img {
+  height: 300px;
+}
+.modal .view .select {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+.modal .view .select .thumb {
+  height: 80px;
+  width: 80px;
+  display: inline-block;
+  margin-right: 0.25em;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.modal .view .select .thumb.selected {
+  box-sizing: border-box;
+  border: 5px solid #f3f4ff;
+}
+.modal .view .select .thumb img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.modal .info {
+  border-top-right-radius: 35px;
+  border-bottom-right-radius: 35px;
+  overflow: hidden;
+  background: #F3F4FF;
+  padding: 2em;
+  color: rgba(0, 0, 0, 0.6);
+  display: grid;
+  grid-template-rows: [row1] 20% [row2] 15% [row3] 35% [row4]	15% [row5] 20%;
+}
+@media only screen and (max-width: 699px) {
+  .modal .info {
+    border-radius: 0;
+  }
+}
+.modal .info .title {
+  display: grid;
+  align-items: center;
+}
+.modal .info .title h1,
+.modal .info .title h2 {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.7);
+  display: block;
+}
+.modal .info .title h1 {
+  font-size: 2rem;
+  line-height: 1.25;
+  align-self: end;
+}
+.modal .info .title h2 {
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.2rem;
+  align-self: start;
+}
+.modal .info .price-rate {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.modal .info .price-rate .price {
+  align-self: center;
+}
+.modal .info .price-rate .price span {
+  font-size: 3rem;
+  vertical-align: bottom;
+  font-weight: 300;
+  color: #6891F0;
+}
+.modal .info .description {
+  align-self: center;
+}
+.modal .info .description p {
+  margin: 0;
+  margin-top: 0.5em;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 1.25em;
+}
+@media only screen and (min-width: 1060x) and (max-width: 1200px) {
+  .modal .info .description p {
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (min-width: 700px) and (max-width: 1060px) {
+  .modal .info .description p {
+    font-size: 0.9rem;
+  }
+}
+.modal .info .color {
+  align-self: center;
+}
+.modal .info .color label {
+  vertical-align: middle;
+}
+.modal .info .color input[type=radio] {
+  margin-left: 1em;
+  vertical-align: top;
+  user-select: none;
+}
+.modal .info .color input[type=radio].white:after {
+  background: #fff;
+}
+.modal .info .color input[type=radio].gold:after {
+  background: #FFF65F;
+}
+.modal .info .color input[type=radio].black:after {
+  background: rgba(0, 0, 0, 0.9);
+}
+.modal .info .color input[type='radio']:after {
+  width: 20px;
+  height: 20px;
+  border-radius: 15px;
+  top: -4px;
+  left: -1px;
+  position: relative;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 3px solid transparent;
+  cursor: pointer;
+  background: transparent;
+}
+.modal .info .color input[type='radio']:checked:after {
+  width: 20px;
+  height: 20px;
+  border-radius: 15px;
+  top: -4px;
+  left: -1px;
+  position: relative;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 3px solid #6891F0;
+}
+.modal .info .purchase {
+  align-self: center;
+  justify-self: center;
+}
