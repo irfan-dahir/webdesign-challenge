@@ -1,0 +1,149 @@
+@secondary: rgba(0,0,0,.9);
+
+#parallax-bg {
+	background: url('../img/bg.jpg') #000;
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: -1;
+	background-size: cover;
+
+	.parallax-bg-cover {
+		position: absolute;
+		top: 0; bottom: 0; left: 0; right: 0;
+		width: 100%;
+		height: 100%;
+		background: #000;
+		z-index: -1;
+
+		transition: all 1s ease;
+
+		&.remove {
+			opacity: 0;
+		}
+	}
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+.wrap {
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	height: 100vh;
+	width: 100vw;
+	z-index: 5;
+
+	.me-ctn {
+		height: 50vh;
+		width: 50vh;
+		background: rgba(255,255,255,1);
+		border-radius: 5px;
+
+		display: grid;
+		grid-template-rows: [row1] 20% [row2] 20% [row3] 40% [row4] 20%;
+
+		.picture {
+			display: grid;
+			user-select: none;
+
+			.img-wrap {
+					height: 125px;
+					width: 125px;
+					border-radius: 50%;
+					border: 5px solid #fff;
+					overflow: hidden;
+					align-self: center;
+					justify-self: center;
+					margin-top: -3em;
+				
+				img {
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+
+		.title {
+			text-align: center;
+			padding: 1em 0;
+			user-select: none;
+
+			h1, h2 {
+				margin: 0;
+			}
+
+			h1 {
+				font-size: 2.3rem;
+				color: rgba(0,0,0,.8);
+			}
+
+			h2 {
+				font-size: 1.2rem;
+				margin-top: 0.25em;
+				text-transform: capitalize;
+				font-family: monospace;
+				position: relative;
+
+				&:before, &:after {
+					position: absolute;
+					height: 2px;
+					width: 50px;
+					top: 0.5em;
+					background: @secondary;
+					display: block;
+					content: '';
+					opacity: .7;
+					margin: 0 4em;
+				}
+				&:after {
+					right: 0;
+				}
+			}
+		}
+
+		.about {
+			padding: 0 1em;
+			display: grid;
+			align-content: center;
+			justify-content: center;
+
+			p {
+				color: rgba(0,0,0,.9);
+				line-height: 1.5;
+				font-size: .9rem;
+				margin: 0 2em;
+				text-align: center;
+				font-weight: 100;
+			}
+		}
+
+		.links {
+			display: grid;
+			text-align: center;
+			align-content: center;
+			user-select: none;
+
+			a {
+				display: inline-block;
+				height: 50px;
+				width: 50px;
+				border: 1px solid @secondary;
+				border-radius: 50%;
+				color: @secondary;
+				text-align: center;
+				font-size: 1.7rem;
+				padding-top: 0.25em;
+				box-sizing: border-box;
+
+				i {
+				}
+			}
+		}
+	}
+}
