@@ -1,0 +1,208 @@
+* {
+  outline: none;
+}
+body {
+  background: linear-gradient(to right, #ff9966, #ff5e62);
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  height: 95vh;
+  font-family: 'Open Sans', sans-serif;
+}
+button,
+.button {
+  background: #ffffff;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.9);
+  user-select: none;
+}
+button span,
+.button span {
+  background: -webkit-linear-gradient(#ff9966, #ff5e62);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+.payment-time {
+  margin: 2em 0;
+  user-select: none;
+}
+.payment-time > .type {
+  font-weight: bold;
+  vertical-align: middle;
+  color: #ffffff;
+  cursor: pointer;
+}
+.payment-time .switch {
+  vertical-align: middle;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 35px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 0 0.5em;
+}
+.payment-time .switch input[type=checkbox] {
+  display: none;
+}
+.payment-time .switch input[type=checkbox]:checked + .slider {
+  background: #fff;
+}
+.payment-time .switch input[type=checkbox]:checked + .slider:before {
+  transform: translateX(20px);
+  background: #ff9966;
+}
+.payment-time .switch input[type=checkbox]:focus + .slider {
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+}
+.payment-time .switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.05);
+  transition: all 0.5s ease;
+  border-radius: 35px;
+}
+.payment-time .switch .slider:before {
+  position: absolute;
+  content: '';
+  height: 30px;
+  width: 30px;
+  left: 5px;
+  bottom: 5px;
+  top: 2px;
+  background: #fff;
+  transition: all .5s ease;
+  border-radius: 50%;
+}
+.plans-ctn {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 1em;
+}
+.plans-ctn .plan {
+  padding-top: 1em;
+  display: grid;
+  grid-template-rows: [row1] 5% [row2] 15% [row3] 65% [row4] 15%;
+  overflow: hidden;
+  grid-gap: 0;
+  border: 10px solid rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  height: 430px;
+  width: 300px;
+  cursor: default;
+  align-self: center;
+  position: relative;
+}
+.plans-ctn .plan .popular {
+  position: absolute;
+  top: 1em;
+  right: -4.5em;
+  height: 40px;
+  width: 230px;
+  background: linear-gradient(to right, #ff9966, #ff5e62);
+  border: 4px solid #fff;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  transform: rotate(45deg);
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.plans-ctn .plan h1,
+.plans-ctn .plan h2 {
+  align-self: center;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.95);
+  text-align: center;
+}
+.plans-ctn .plan h2 {
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+.plans-ctn .plan h2 .currency {
+  font-size: 2.5rem;
+  margin-right: 0.25rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+.plans-ctn .plan .features {
+  padding: 0;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  align-self: center;
+}
+.plans-ctn .plan .features li {
+  border-top: 5px solid #ffffff;
+  background: #fff;
+  text-align: left;
+  height: 50px;
+  display: grid;
+  padding: 0 1em;
+  align-self: center;
+  grid-template-columns: 30px auto;
+}
+.plans-ctn .plan .features li span {
+  align-self: center;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: .9rem;
+  font-weight: 400;
+}
+.plans-ctn .plan .features li span span {
+  color: rgba(0, 0, 0, 0.5);
+  margin-left: 0.3em;
+}
+.plans-ctn .plan .features li i,
+.plans-ctn .plan .features li svg {
+  margin-right: 1em;
+  align-self: center;
+  color: rgba(0, 0, 0, 0.7);
+}
+.plans-ctn .plan.featured {
+  background: #ffffff;
+  height: 500px;
+  box-shadow: 0 0 100px 20px rgba(0, 0, 0, 0.05);
+}
+.plans-ctn .plan.featured h1,
+.plans-ctn .plan.featured h2 {
+  color: rgba(0, 0, 0, 0.9);
+}
+.plans-ctn .plan.featured h1 .currency,
+.plans-ctn .plan.featured h2 .currency {
+  color: rgba(0, 0, 0, 0.7);
+}
+.plans-ctn .plan.featured .features li {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+.plans-ctn .plan.featured .features li span {
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.9);
+}
+.plans-ctn .plan.featured .features li span span {
+  color: rgba(0, 0, 0, 0.5);
+  margin-left: 0.3em;
+}
+.plans-ctn .plan.featured button {
+  background: linear-gradient(to right, #ff9966, #ff5e62);
+}
+.plans-ctn .plan.featured button span {
+  background: -webkit-linear-gradient(#fff, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
