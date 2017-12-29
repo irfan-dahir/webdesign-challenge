@@ -1,0 +1,314 @@
+* {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1em;
+  background: #13293D;
+}
+@media only screen and (min-width: 990px) and (max-width: 1480px) {
+  body {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 989px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-gap: 0;
+  }
+  body .post {
+    width: auto;
+  }
+  body .post .top {
+    grid-template-columns: 23% 70% 7%;
+  }
+  body .post > .comments .comment {
+    grid-template-columns: 17% 75% 7%;
+  }
+}
+a {
+  text-decoration: none;
+  color: #1B98E0;
+}
+button,
+.button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+}
+.grid {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-start;
+}
+@media only screen and (min-width: 990px) and (max-width: 1480px) {
+  .grid {
+    margin-top: 1em;
+  }
+}
+@media only screen and (max-width: 989px) {
+  .grid {
+    margin-top: 1em;
+  }
+}
+.post {
+  display: grid;
+  align-self: center;
+  width: 470px;
+  margin-top: 1em;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.post:first-child {
+  margin-top: 0;
+}
+.post.reply > .info {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.post .top {
+  display: grid;
+  grid-template-columns: 17% 73% 10%;
+  padding: 1em;
+}
+.post .top .picture {
+  display: block;
+  height: 60px;
+  width: 60px;
+  user-select: none;
+}
+.post .top .picture img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.post .top .name-time {
+  display: grid;
+  grid-template-rows: 40% 30%;
+  align-content: center;
+}
+.post .top .name-time .name {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.post .top .name-time .name a {
+  color: #1B98E0;
+}
+.post .top .name-time time {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 0.8rem;
+  cursor: default;
+}
+.post .top > .action {
+  display: grid;
+  justify-content: center;
+  align-content: start;
+  padding-top: 0.5em;
+}
+.post .top > .action button {
+  font-size: 1.2rem;
+  color: #006494;
+}
+.post .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.post .content p {
+  padding: 0 1em;
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.3em;
+}
+.post .content img {
+  max-height: 800px;
+  width: 100%;
+  object-fit: cover;
+}
+.post > .action {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  height: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-content: center;
+}
+.post > .action button {
+  height: 40px;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 0.9rem;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  color: #247BA0;
+  transition: .1s;
+}
+.post > .action button:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+.post > .action button:last-child {
+  border-right: none;
+}
+.post > .action button.like {
+  font-weight: bold;
+  vertical-align: middle;
+  color: #1B98E0;
+}
+.post > .action button.like.liked {
+  background: #1B98E0;
+  color: #fff;
+}
+.post > .action button.like.liked:hover {
+  background: #1679b2;
+}
+.post > .action button.like i,
+.post > .action button.like svg {
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+.post > .info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 0.5em;
+  height: 40px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  user-select: none;
+}
+.post > .info > .likes {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 10% 90%;
+}
+.post > .info > .likes i,
+.post > .info > .likes svg {
+  color: #1B98E0;
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+.post > .info > .likes .likers {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.post > .info > .likes .likers img {
+  vertical-align: middle;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin-left: -7px;
+  object-fit: cover;
+}
+.post > .info > .likes .likers img:first-child {
+  margin: 0;
+}
+.post > .info > .likes .likers .other-likers {
+  align-self: center;
+  vertical-align: middle;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: .8rem;
+}
+.post > .info > .other {
+  display: flex;
+  justify-content: flex-end;
+}
+.post > .info > .other .comments,
+.post > .info > .other .shares {
+  align-self: center;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: .7rem;
+}
+.post > .info > .other i,
+.post > .info > .other svg {
+  font-size: 0.2rem;
+  align-self: center;
+  margin: 0 1em;
+  color: rgba(0, 0, 0, 0.7);
+}
+.post > .comments {
+  background: #fcfcfc;
+  padding: 1em 0;
+}
+.post > .comments > .comment {
+  display: grid;
+  grid-template-columns: 15% 75% 10%;
+  margin-top: 1em;
+}
+.post > .comments > .comment:hover .option button {
+  opacity: 1;
+}
+.post > .comments > .comment:first-child {
+  margin: 0;
+}
+.post > .comments > .comment.reply {
+  margin-left: 15%;
+  margin-top: 0.5em;
+}
+.post > .comments > .comment.reply .picture img {
+  height: 35px;
+  width: 35px;
+}
+.post > .comments > .comment.reply .content p {
+  font-size: .8rem;
+}
+.post > .comments > .comment .picture {
+  display: flex;
+  justify-content: center;
+  user-select: none;
+}
+.post > .comments > .comment .picture img {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.post > .comments > .comment .content p {
+  font-size: .85rem;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0;
+  padding: 0;
+  line-height: 1.1;
+  width: 95%;
+}
+.post > .comments > .comment .content p .name {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-right: 0.25rem;
+}
+.post > .comments > .comment .content button {
+  padding: 0;
+  margin: 0;
+  margin-right: 0.5em;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  user-select: none;
+}
+.post > .comments > .comment .content button.liked {
+  color: #1B98E0;
+}
+.post > .comments > .comment .content .likes,
+.post > .comments > .comment .content .replies {
+  display: inline-block;
+  font-size: 0.8rem;
+  text-align: right;
+  float: right;
+  color: rgba(0, 0, 0, 0.5);
+  margin-left: 0.5em;
+  vertical-align: middle;
+}
+.post > .comments > .comment .option {
+  display: grid;
+  justify-content: content;
+  align-content: start;
+}
+.post > .comments > .comment .option button {
+  transition: .1s;
+  opacity: 0;
+}
+.post > .comments > .comment .option button i,
+.post > .comments > .comment .option button svg {
+  transform: rotate(90deg);
+  color: rgba(0, 0, 0, 0.5);
+}
